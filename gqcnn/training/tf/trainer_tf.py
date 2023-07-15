@@ -144,13 +144,11 @@ class GQCNNTrainerTF(object):
                     (-1, 2))
                 return tf.reduce_mean(
                     tf.nn.sparse_softmax_cross_entropy_with_logits(
-                        _sentinel=None,
                         labels=self.train_labels_node,
                         logits=log))
             else:
                 return tf.reduce_mean(
                     tf.nn.sparse_softmax_cross_entropy_with_logits(
-                        _sentinel=None,
                         labels=self.train_labels_node,
                         logits=self.train_net_output,
                         name=None))
